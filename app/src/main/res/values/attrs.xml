@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChristmasTree">
+        <attr name="bauble_round" format="color" />
+        <attr name="bauble_small" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="UpdatedScene" parent="DefaultScene">
+        <item name="bauble_round">#db486e</item>
+        <item name="bauble_small">#22c7f7</item>
+    </style>
+
+    <style name="DefaultScene">
+        <item name="bauble_round">#fec758</item>
+        <item name="bauble_small">#f22424</item>
+    </style>
+
+</resources>

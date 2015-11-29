@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Dynamic svg colours</string>
+    <string name="change_colour">Change Colour</string>
+</resources>
