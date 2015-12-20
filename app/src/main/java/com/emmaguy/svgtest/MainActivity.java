@@ -1,5 +1,6 @@
 package com.emmaguy.svgtest;
 
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.StyleRes;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView imageView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
@@ -22,16 +23,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button.setOnClickListener(this);
 
         imageView = (ImageView) findViewById(R.id.imageview);
-        changeTheme(R.style.DefaultScene);
+
+        final ContextThemeWrapper wrapper = new ContextThemeWrapper(this, R.style.DefaultScene);
+        changeTheme(wrapper.getTheme());
     }
 
-    private void changeTheme(@StyleRes int styleId) {
-        final ContextThemeWrapper wrapper = new ContextThemeWrapper(this, styleId);
-        final Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.christmas, wrapper.getTheme());
+    private void changeTheme(@StyleRes final Resources.Theme theme) {
+        final Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.christmas, theme);
         imageView.setImageDrawable(drawable);
     }
 
-    @Override public void onClick(View v) {
-        changeTheme(R.style.UpdatedScene);
+    @Override public void onClick(final View v) {
+        final Resources.Theme theme = getResources().newTheme();
+
+        theme.applyStyle(R.style.BaubleRound, false);
+        theme.applyStyle(R.style.BaubleSmall, false);
+
+        changeTheme(theme);
     }
 }

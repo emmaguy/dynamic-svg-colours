@@ -6,8 +6,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="UpdatedScene" parent="DefaultScene">
+    <style name="BaubleRound">
         <item name="bauble_round">#db486e</item>
+    </style>
+
+    <style name="BaubleSmall">
         <item name="bauble_small">#22c7f7</item>
     </style>
 
